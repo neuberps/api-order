@@ -3,11 +3,11 @@ package com.ms.order;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class OrderApplicationTests {
+@SpringBootTest(classes = OrderApplication.class)
+public class OrderApplicationTests {
 
 	@Test
-	void contextLoads() {
+	public void contextLoads() {
 	}
 
 }
