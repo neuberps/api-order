@@ -7,6 +7,9 @@ Welcome to the documentation for the Order Microservice API. This microservice i
 ## Getting Started
 To begin using the Order Microservice, please refer to the following sections for detailed guidance:
 
+![image](https://github.com/neuberps/api-order/assets/128233610/79593dda-8567-4d21-b2b3-29ba272fb48d)
+
+
 - Official Gradle Documentation
 - Spring Boot Gradle Plugin Reference Guide
 - Creating an OCI Image
@@ -28,7 +31,7 @@ Explore the following guides to learn how to utilize specific features effective
 For further insights and assistance, refer to these additional references:
 Gradle Build Scans – insights for your project's build
 
-![Sprinio.PNG](..%2F..%2F..%2FImagens%2FSprinio.PNG)
+
 
 ## Export Postman Additional Links
 
