@@ -48,7 +48,7 @@ file from the following link: api-order.postman_collection.json.
 [api-order.postman_collection.json](api-order.postman_collection.json).
 
 ## Test-Driven Development
-Este projeto foi desenvolvido seguindo a metodologia TDD (Test-Driven Development), onde os testes foram escritos antes da implementação do código, garantindo assim uma abordagem orientada a testes desde o início do desenvolvimento.
+This project was developed following the TDD (Test-Driven Development) methodology, where the tests were written before the implementation of the code, thus ensuring a test-oriented approach from the beginning of development.
 
 ![img.png](img.png)
 
