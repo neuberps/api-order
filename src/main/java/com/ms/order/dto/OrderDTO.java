@@ -1,10 +1,7 @@
 package com.ms.order.dto;
 
 import com.ms.order.model.Order;
-import jakarta.validation.Constraint;
-import jakarta.validation.ConstraintValidator;
-import jakarta.validation.ConstraintValidatorContext;
-import jakarta.validation.Payload;
+import com.ms.order.validation.ValidDateFormat;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
@@ -14,10 +11,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.beans.BeanUtils;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+
 
 @Data
 @AllArgsConstructor
@@ -71,31 +65,5 @@ public class OrderDTO implements Serializable {
     public OrderDTO(Order entity){
         BeanUtils.copyProperties(entity, this);
     }
-
-
-    @Constraint(validatedBy = ValidDateFormatValidator.class)
-    @java.lang.annotation.Target({java.lang.annotation.ElementType.FIELD})
-    @java.lang.annotation.Retention(java.lang.annotation.RetentionPolicy.RUNTIME)
-    public @interface ValidDateFormat {
-        String message() default "Invalid date format";
-        Class<?>[] groups() default {};
-        Class<? extends Payload>[] payload() default {};
-    }
-
-    public static class ValidDateFormatValidator implements ConstraintValidator<ValidDateFormat, String> {
-        @Override
-        public boolean isValid(String value, ConstraintValidatorContext context) {
-            if (value == null) {
-                return false;
-            }
-            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-            sdf.setLenient(false);
-            try {
-                Date date = sdf.parse(value);
-                return true;
-            } catch (ParseException e) {
-                return false;
-            }
-        }
-    }
 }
+
