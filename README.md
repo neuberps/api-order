@@ -7,6 +7,9 @@ Welcome to the documentation for the Order Microservice API. This microservice i
 ## Getting Started
 To begin using the Order Microservice, please refer to the following sections for detailed guidance:
 
+![image](https://github.com/neuberps/api-order/assets/128233610/79593dda-8567-4d21-b2b3-29ba272fb48d)
+
+
 - Official Gradle Documentation
 - Spring Boot Gradle Plugin Reference Guide
 - Creating an OCI Image
@@ -28,7 +31,7 @@ Explore the following guides to learn how to utilize specific features effective
 For further insights and assistance, refer to these additional references:
 Gradle Build Scans – insights for your project's build
 
-![Sprinio.PNG](..%2F..%2F..%2FImagens%2FSprinio.PNG)
+
 
 ## Export Postman Additional Links
 
@@ -47,7 +50,7 @@ file from the following link: api-order.postman_collection.json.
 ### [Postman_collection.json](api-order.postman_collection.json).
 
 ## Test-Driven Development
-Este projeto foi desenvolvido seguindo a metodologia TDD (Test-Driven Development), onde os testes foram escritos antes da implementação do código, garantindo assim uma abordagem orientada a testes desde o início do desenvolvimento.
+This project was developed following the TDD (Test-Driven Development) methodology, where the tests were written before the implementation of the code, thus ensuring a test-oriented approach from the beginning of development.
 
 ![img.png](./README/img.png)
 
@@ -61,3 +64,7 @@ Este projeto foi desenvolvido seguindo a metodologia TDD (Test-Driven Developmen
 
 This documentation provides comprehensive insights into utilizing the Order Microservice API efficiently. For any further inquiries or assistance, please refer to the provided resources or contact the development team.
 
+<<<<<<< HEAD
+=======
+This documentation provides comprehensive insights into utilizing the Order Microservice API efficiently. For any further inquiries or assistance, please refer to the provided resources or contact the development team.
+>>>>>>> 171adc1b0456cb5adfafe3aa48779d79016ed1c9
