@@ -36,7 +36,7 @@ public class OrderController {
         }
     }
 
-    @Transactional
+
     @PostMapping
     public ResponseEntity<OrderDTO> create(@RequestBody @Valid OrderDTO entity) {
         try {
@@ -72,7 +72,7 @@ public class OrderController {
         }
     }
 
-    @Transactional
+
     @PutMapping(value="/{id}")
     public ResponseEntity<OrderDTO> update(@PathVariable String id, @Valid @RequestBody OrderDTO orderDTO) {
         try {
