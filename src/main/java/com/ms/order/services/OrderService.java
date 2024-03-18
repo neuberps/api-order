@@ -7,6 +7,7 @@ import com.ms.order.model.Order;
 import com.ms.order.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -25,7 +26,7 @@ public class OrderService {
         }
         return list.stream().map(OrderDTO::new).toList();
     }
-
+    @Transactional
     public OrderDTO create(OrderDTO orderDTO) throws ServiceException {
         Order entity = new Order(orderDTO);
         entity.setRegistryUser(orderDTO.getRegistryUser());
@@ -34,6 +35,7 @@ public class OrderService {
         return new OrderDTO(entity);
     }
 
+    @Transactional
     public OrderDTO findById(String id) throws ServiceException {
         return repository.findById(id)
                 .map(OrderDTO::new)
