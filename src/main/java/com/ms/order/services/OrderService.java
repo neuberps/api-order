@@ -35,7 +35,6 @@ public class OrderService {
         return new OrderDTO(entity);
     }
 
-    @Transactional
     public OrderDTO findById(String id) throws ServiceException {
         return repository.findById(id)
                 .map(OrderDTO::new)
@@ -47,6 +46,8 @@ public class OrderService {
                 .map(OrderDTO::new)
                 .orElseThrow(() -> new ClientNotFoundException("Client not found with email: " + client));
     }
+
+    @Transactional
     public OrderDTO update(String id, OrderDTO orderDTO) throws ServiceException {
         Optional<Order> optionalClient = repository.findById(id);
         if (optionalClient.isPresent()) {
