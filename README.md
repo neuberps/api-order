@@ -32,7 +32,9 @@ Gradle Build Scans – insights for your project's build
 
 ## Export Postman Additional Links
 
-![img_2.png](img_2.png)
+![img.png](./README/img.png)
+
+
 
 Exporting Postman Collection
 To access the Postman Collection for testing the API endpoints, follow these steps:
@@ -42,19 +44,20 @@ file from the following link: api-order.postman_collection.json.
 1. Import the downloaded file into Postman by navigating to the import option and selecting the file.
 2. This will load the project's collection.
 
-[api-order.postman_collection.json](api-order.postman_collection.json).
+### [Postman_collection.json](api-order.postman_collection.json).
 
 ## Test-Driven Development
 Este projeto foi desenvolvido seguindo a metodologia TDD (Test-Driven Development), onde os testes foram escritos antes da implementação do código, garantindo assim uma abordagem orientada a testes desde o início do desenvolvimento.
 
-![img.png](img.png)
+![img.png](./README/img.png)
 
 # MongoDB NoSQL Database in Docker
+![img_3.PNG](README%2Fimg_3.PNG)
 
-![img_3.png](img_3.png)
 
 ## The collection for production and testing environments is illustrated below:
 
-![img_4.png](img_4.png)
+![img_1.png](./README/img_1.png)
 
 This documentation provides comprehensive insights into utilizing the Order Microservice API efficiently. For any further inquiries or assistance, please refer to the provided resources or contact the development team.
+
