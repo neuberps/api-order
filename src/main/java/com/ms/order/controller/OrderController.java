@@ -1,17 +1,18 @@
 package com.ms.order.controller;
 
 import com.ms.order.dto.OrderDTO;
+import com.ms.order.dto.StatusOrderDTO;
+import com.ms.order.exceptions.OrderNotFoundException;
 import com.ms.order.exceptions.ServiceException;
 import com.ms.order.services.OrderService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin
 @RestController
 @RequestMapping("/api/orders")
 public class OrderController {
@@ -90,6 +91,14 @@ public class OrderController {
             return ResponseEntity.ok().build();
         } catch (ServiceException e) {
             return ResponseEntity.notFound().build();
+        }
+    }
+    @GetMapping("/liststausorders")
+    public ResponseEntity<List<StatusOrderDTO>> statusOrderlist() {
+        try {
+            return ResponseEntity.ok(service.listStatusOrder());
+        } catch (ServiceException e) {
+            throw new OrderNotFoundException("Lista vazia");
         }
     }
 }

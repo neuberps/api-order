@@ -1,6 +1,10 @@
 package com.ms.order.services;
 
 import com.ms.order.dto.OrderDTO;
+import com.ms.order.dto.OrderItemConverter;
+import com.ms.order.dto.OrderItemDTO;
+import com.ms.order.dto.StatusOrderDTO;
+import com.ms.order.enums.StatusOrder;
 import com.ms.order.exceptions.ClientNotFoundException;
 import com.ms.order.exceptions.ServiceException;
 import com.ms.order.model.Order;
@@ -9,9 +13,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class OrderService {
@@ -54,7 +61,13 @@ public class OrderService {
             Order entity = optionalClient.get();
             entity.setOrderDate(orderDTO.getOrderDate());
             entity.setClient(orderDTO.getClient());
-            entity.setOrderItems(orderDTO.getOrderItems());
+            try {
+                List<OrderItemDTO> orderItems = OrderItemConverter.convertStringToOrderItems(orderDTO.getOrderItemsAsString());
+                entity.setOrderItems(orderItems);
+            } catch (IOException e) {
+                throw new RuntimeException("Error converting order items from JSON", e);
+            }
+
             entity.setOrderStatus(orderDTO.getOrderStatus());
             entity.setOrderTotal(orderDTO.getOrderTotal());
             entity.setPaymentMethod(orderDTO.getPaymentMethod());
@@ -80,4 +93,9 @@ public class OrderService {
         repository.deleteById(id);
     }
 
+    public List<StatusOrderDTO> listStatusOrder() throws ServiceException{
+        return Arrays.stream(StatusOrder.values())
+                .map(StatusOrderDTO::new)
+                .collect(Collectors.toList());
+    }
 }
